@@ -39,12 +39,6 @@ os.mkdir(TEST_PATH)
 tests = open(TEST_PATH + "/tests.py", "w")
 
 
-
-
-
-
-
-
 # Create requirements.txt and write a comment
 req = open(PATH + "requirements.txt", "w")
 req.write(
