@@ -9,7 +9,7 @@ import click
 @click.command()
 @click.argument("script_name")
 def main(script_name):  # (proj_type) :
-
+    #TODO Use pathlib instead of os
     # TODO get the folder path from the user
     # TODO add functionality to delete the structure with CLI optional parameter
     #TODO add functionality to add the project to git after creation
