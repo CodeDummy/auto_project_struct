@@ -14,13 +14,11 @@ def main(script_name):  # (proj_type) :
     # TODO add functionality to delete the structure with CLI optional parameter
 
     PATH = "C://code/" + script_name + "/"
-    # stringlist = PATH.split("/")
     SCRIPT_NAME = script_name
-    # print(stringlist[-2])
-
-    # Create path for the main script
+   
     SRC_PATH = PATH + SCRIPT_NAME + "/"
     try :
+        # Create path for the main script
         os.makedirs(SRC_PATH)
         src = open(SRC_PATH + script_name + ".py", "w")
         src.write(
