@@ -1,13 +1,9 @@
 # This script creates a project standard project structure according to the Real Python article
 # https://realpython.com/python-application-layouts/
 
-from pathlib import Path
+import pathlib
 import os
 import click
-
-
-
-
 
 
 @click.command()
@@ -24,13 +20,7 @@ def main(script_name):  # (proj_type) :
     SRC_PATH = PATH + SCRIPT_NAME + "/"
     try :
         # Create path for the main script
-        p = Path(SRC_PATH)
-        try:
-            p.mkdir()
-        except FileExistsError as exc:
-            print(exc)
-        
-       # os.makedirs(SRC_PATH)- commented out during conversion to pathlib from os
+        os.makedirs(SRC_PATH)
         src = open(SRC_PATH + script_name + ".py", "w")
         src.write(
             "#Write the source code in file.This is the script that you’re distributing"
@@ -51,21 +41,11 @@ def main(script_name):  # (proj_type) :
     
         # Create path for the docs
         DOC_PATH = PATH + "docs"
-        #os.mkdir(DOC_PATH) commented out during conversion to pathlib from os
-        p = Path(DOC_PATH)
-        try:
-            p.mkdir()
-        except FileExistsError as exc:
-            print(exc)
+        os.mkdir(DOC_PATH)
     
         # Create path for tests
         TEST_PATH = PATH + "tests/"
-        #os.mkdir(TEST_PATH) commented out during conversion to pathlib from os
-        p = Path(TEST_PATH)
-        try:
-            p.mkdir()
-        except FileExistsError as exc:
-            print(exc)
+        os.mkdir(TEST_PATH)
         tests = open(TEST_PATH + "/tests.py", "w")
         tests.write("#write all your tests for this simple script here")
         tests.close()
